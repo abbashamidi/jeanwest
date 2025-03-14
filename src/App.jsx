@@ -1,13 +1,17 @@
-import Header from "./components/header"
+// import Header from "./components/HeaderForMobileComp"
+// import ImageCarousel from "./components/ImageCarousel"
+import HeaderDesktop from "./components/HeaderForDesktopComp";
 
 function App() {
-  return(
+  console.log("App component rendered");
+  return (
     <>
-    <div>
-      <Header/>
-    </div>
+      <div>
+        <HeaderDesktop/>
+        {/* <ImageCarousel /> */}
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
