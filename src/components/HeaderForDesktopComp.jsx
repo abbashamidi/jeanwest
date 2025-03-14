@@ -1,12 +1,12 @@
 import React from "react";
 import { HeaderForDesktopItem } from "./HeaderForDesktopItem";
 
-function HeaderDesktop() {
+function HeaderDesktop({className}) {
   return (
-    <div className="w-full flex-col border-b-[1px] border-x-gray-200 relative">
-      <div className="w-[80%] mx-auto flex items-center justify-between px-2 py-3 mb-2">
+    <div className={`w-full border-b ${className}`}>
+      <div className="h-14 w-[80%] mx-auto flex items-center justify-between px-2 py-3 mb-2">
         <img
-          className="w-[12.5%] h-[9.5%]"
+          className="h-full py-2"
           src="./images/download.svg"
           alt="icon"
         />
@@ -44,7 +44,7 @@ function HeaderDesktop() {
         <div className="bg-gray-100 rounded p-1 flex flex-row w-3/12">
           <input
             type="text"
-            className="grow text-sm focus:outline-none bg-transparent"
+            className="w-full text-sm focus:outline-none bg-transparent"
             placeholder="جستجو بین محصولات"
           />
 
