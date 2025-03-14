@@ -13,7 +13,7 @@ export function HeaderForDesktopItem({ title, icon, children }) {
         </div>
       </div>
 
-      <div className="hidden peer-hover:block absolute inset-x-0 mt-3.5 h-screen bg-black/10 backdrop:blur-sm"></div>
+      <div className="hidden peer-hover:block absolute inset-x-0 mt-[15px] h-screen bg-black/30 backdrop:blur-sm"></div>
     </li>
   );
 }
