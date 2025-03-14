@@ -30,9 +30,11 @@ function HeaderDesktop() {
         </div>
       </div>
 
-      <div className="w-4/5 mx-auto flex py-2">
+      <div className="w-4/5 mx-auto flex items-center py-2">
         <ul className="flex items-center gap-7 grow">
-          <li className="group cursor-pointer">مردانه</li>
+          <HeaderForDesktopItem title={"جدیدترین"} icon={"fa-solid fa-fire"}>
+            <h1>mahdi</h1>
+          </HeaderForDesktopItem>
         </ul>
 
         <div className="bg-gray-100 rounded p-1 flex flex-row w-3/12">
