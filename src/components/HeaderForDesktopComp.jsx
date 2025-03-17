@@ -46,31 +46,50 @@ function HeaderDesktop({ className }) {
             </div>
           </HeaderForDesktopItem>
           <HeaderForDesktopItem title={"مردانه"}>
-            <div className="flex items-center justify-evenly py-3">
+            <div className="flex items-start justify-evenly py-3">
               <MardanehList
                 title={"پوشاک مردانه"}
                 icon={"fa-solid fa-shirt"}
-                buttons={["شلوار", "پیراهن", "کت و شلوار", "کاپشن"]}
+                buttons={[
+                  "تاپ",
+                  "شلوارک ",
+                  "پیراهن",
+                  "تیشرت و پولوشرت",
+                  "کت و شلوار",
+                  "پلیور و ژاکت ",
+                  "کاپشن و پالتو",
+                  "ست لباس",
+                  "شلوار",
+                ]}
               />
               <MardanehList
                 title={"کیف و کفش مردانه"}
                 icon={"fa-solid fa-shoe-prints"}
-                buttons={["کفش رسمی", "کفش اسپرت", "کیف دوشی", "کوله پشتی"]}
+                buttons={["چمدان", "کفش", "کیف", "صندل"]}
               />
               <MardanehList
                 title={"عطر و ادکلن مردانه"}
                 icon={"far fa-clock"}
-                buttons={["ادکلن مردانه", "بادی اسپلش", "عطر جیبی"]}
+                buttons={["عطر و ادکلن"]}
               />
               <MardanehList
                 title={"اکسسوری و زیورآلات مردانه"}
                 icon={"far fa-clock"}
-                buttons={["ساعت", "عینک آفتابی", "دستبند", "کمربند"]}
+                buttons={[
+                  "لباس زیر",
+                  "چتر",
+                  "دستکش و کلاه",
+                  "ساعت",
+                  "کمربند",
+                  "جوراب",
+                  "عینک",
+                ]}
               />
               <MardanehList
                 title={"همه محصولات مردانه"}
                 icon={"fas fa-ticket"}
-                buttons={["مشاهده همه"]}
+                buttons={[""]}
+                hasImage={"./images/li-hover-divs/image1.jpg"}
               />
             </div>
           </HeaderForDesktopItem>

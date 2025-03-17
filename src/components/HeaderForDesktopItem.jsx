@@ -7,7 +7,9 @@ export function HeaderForDesktopItem({ title, icon, children }) {
         {title}
       </button>
 
-      <div className="peer hidden peer-hover:block hover:block absolute inset-x-0 z-10 pt-[15px]">
+      
+
+      <div className="peer hidden peer-hover:block hover:block absolute inset-x-0 z-10 pt-[15px] peer-has(+ peer:hover:text-red-600)">
         <div className="bg-white">
           {children}
         </div>
