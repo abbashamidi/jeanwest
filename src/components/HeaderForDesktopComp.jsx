@@ -28,7 +28,7 @@ function HeaderDesktop({ className }) {
       </div>
 
       <div className="w-4/5 mx-auto flex items-center py-2">
-        <ul className="flex items-center gap-7 grow">
+        <ul className="flex items-center gap-7 grow text-sm">
           <HeaderForDesktopItem title={"جدیدترین"} icon={"fa-solid fa-fire"}>
             <div className="flex w-4/5 justify-evenly items-center mx-auto p-4 gap-4">
               <ImageButton
@@ -93,6 +93,137 @@ function HeaderDesktop({ className }) {
               />
             </div>
           </HeaderForDesktopItem>
+          <HeaderForDesktopItem title={"زنانه"}>
+            <div className="flex items-start justify-evenly py-3">
+              <MardanehList
+                title={"پوشاک زنانه"}
+                icon={"fa-solid fa-shirt"}
+                buttons={[
+                  "شلوارک",
+                  "تاپ",
+                  "کاپشن و پالتو",
+                  "کت و شلوار",
+                  "شلوار",
+                  "شومیز و پیراهن",
+                  "ست لباس",
+                  "پلیور و ژاکت",
+                  "دامن",
+                  "تیشرت",
+                  "مانتو و بلوز",
+                  "لباس شنا",
+                  "لباس زیر",
+                ]}
+              />
+              <MardanehList
+                title={"کیف و کفش زنانه"}
+                icon={"fa-solid fa-shoe-prints"}
+                buttons={["صندل", "کیف", "کفش", "چمدان"]}
+              />
+              <MardanehList
+                title={"عطر و ادکلن زنانه"}
+                icon={"far fa-clock"}
+                buttons={["عطر و ادکلن زنانه"]}
+              />
+              <MardanehList
+                title={"اکسسوری و زیورآلات"}
+                icon={"far fa-clock"}
+                buttons={[
+                  "شال و روسری",
+                  "جوراب",
+                  "عینک",
+                  "کمربند",
+                  "دستکش و کلاه",
+                  "چتر",
+                  "ساعت",
+                  "دفترچه",
+                  "استرج",
+                  "زیورآلات",
+                  "دستبند",
+                ]}
+              />
+              <MardanehList
+                title={"مشاهده همه محصولات"}
+                icon={"fas fa-ticket"}
+                buttons={[""]}
+                hasImage={"./images/li-hover-divs/image2.jpg"}
+              />
+            </div>
+          </HeaderForDesktopItem>
+          <HeaderForDesktopItem title={"بچه گانه"}>
+            <div className="flex items-start justify-evenly py-3">
+              <MardanehList
+                title={"پوشاک پسرانه"}
+                icon={"fa-solid fa-shirt"}
+                buttons={[
+                  "پیراهن",
+                  "پلیور",
+                  "تاپ",
+                  "شلوار",
+                  "ساپورت",
+                  "لباس شنا",
+                  "شلوارک",
+                  "بلوز",
+                  "کت و شلوار",
+                  "کاپشن و پالتو",
+                  "تیشرت",
+                  "لباس زیر",
+                  "ست لباس",
+                ]}
+              />
+              <MardanehList
+                title={"پوشاک دخترانه"}
+                icon={"fa-solid fa-shoe-prints"}
+                buttons={[
+                  "پلیور",
+                  "لباس شنا",
+                  "کت و شلوار",
+                  "تاپ",
+                  "شلوارک",
+                  "ست لباس",
+                  "لباس زیر",
+                  "شلوار",
+                  "کاپشن و پالتو",
+                  "دامن",
+                  "ساپورت",
+                  "شال و روسری",
+                  "تیشرت",
+                  "بلوز",
+                  "شومیز و پیراهن",
+                  "مانتو",
+                  "پلیور و ژاکت",
+                ]}
+              />
+              <MardanehList
+                title={"کیف و کفش بچه گانه"}
+                icon={"far fa-clock"}
+                buttons={["صندل","کیف","کفش","چمدان"]}
+              />
+              <MardanehList
+                title={"اکسسوری و زیورآلات بچه گانه"}
+                icon={"far fa-clock"}
+                buttons={[
+                  "اسباب بازی",
+                  "کمربند",
+                  "جوراب",
+                  "چتبر",
+                  "دستکش و کلاه",
+                  "عینک",
+                  "ساعت",
+                  "استرج",
+                  "دستبند",
+                  "عروسک",
+                ]}
+              />
+              <MardanehList
+                title={"همه محصولات مردانه"}
+                icon={"fas fa-ticket"}
+                buttons={[""]}
+                hasImage={"./images/li-hover-divs/image3.png"}
+              />
+            </div>
+          </HeaderForDesktopItem>
+          <span className="text-gray-400">|</span>
+          <HeaderForDesktopItem title={"فروش ویژه"} icon={"fas fa-ticket"} isRed={true}></HeaderForDesktopItem>
         </ul>
 
         <div className="bg-gray-100 rounded p-1 flex flex-row w-3/12">
