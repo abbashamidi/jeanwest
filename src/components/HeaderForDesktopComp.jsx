@@ -196,7 +196,7 @@ function HeaderDesktop({ className }) {
               <MardanehList
                 title={"کیف و کفش بچه گانه"}
                 icon={"far fa-clock"}
-                buttons={["صندل","کیف","کفش","چمدان"]}
+                buttons={["صندل", "کیف", "کفش", "چمدان"]}
               />
               <MardanehList
                 title={"اکسسوری و زیورآلات بچه گانه"}
@@ -223,16 +223,25 @@ function HeaderDesktop({ className }) {
             </div>
           </HeaderForDesktopItem>
           <span className="text-gray-400">|</span>
-          <HeaderForDesktopItem title={"فروش ویژه"} icon={"fas fa-ticket"} isRed={true}></HeaderForDesktopItem>
+          <HeaderForDesktopItem
+            title={"فروش ویژه"}
+            icon={"fas fa-ticket"}
+            isRed={true}
+          >
+            <div className="flex w-4/5 justify-evenly items-center mx-auto p-4 gap-4">
+              <ImageButton title={"خرید"} src={"/images/ListPics/pic1.jpg"} />
+              <ImageButton title={"خرید"} src={"/images/ListPics/pic2.jpg"} />
+              <ImageButton title={"خرید"} src={"/images/ListPics/pic3.jpg"} />
+            </div>
+          </HeaderForDesktopItem>
         </ul>
 
-        <div className="bg-gray-100 rounded p-1 flex flex-row w-3/12">
+        <div className="bg-gray-100 rounded p-1 flex flex-row w-3/12 focus-within:bg-white focus-within:border focus-within:w-4/12 max-h-[36px] transition-all duration-300 ease-in-out">
           <input
             type="text"
-            className="w-full text-sm focus:outline-none bg-transparent"
+            className="w-full text-sm focus:outline-none bg-transparent px-2"
             placeholder="جستجو بین محصولات"
           />
-
           <i className="fa-solid fa-search text-gray-500 text-lg px-2"></i>
         </div>
       </div>
@@ -242,9 +251,9 @@ function HeaderDesktop({ className }) {
 
 function ImageButton({ title, icon, src }) {
   return (
-    <button className="cursor-pointer relative h-[300px] overflow-hidden aspect-square rounded border border-gray-300">
+    <button className="cursor-pointer relative h-[300px] overflow-hidden w-[420px] rounded border border-gray-300">
       <img
-        className="aspect-square h-full object-cover hover:scale-110 transition-transform"
+        className="aspect-square h-full object-cover hover:scale-110 transition-transform w-full"
         src={src}
         alt="photo"
       />

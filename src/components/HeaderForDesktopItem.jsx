@@ -4,7 +4,6 @@ export function HeaderForDesktopItem({ title, icon, children, isRed }) {
       <button className="hover:text-red-600 cursor-pointer flex items-center peer">
         <span className={`text-sm ${isRed ? "text-red-600" : ""}`}>
           {icon ? <i className={`${icon} inline-block px-2`}></i> : null}
-
           {title}
         </span>
       </button>
