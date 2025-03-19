@@ -6,7 +6,7 @@ import { SearchBar } from "./searchBar";
 function HeaderDesktop({ className }) {
   return (
     <div className={`w-full border-b ${className}`}>
-      <div className="h-14 w-[80%] mx-auto flex items-center justify-between px-2 py-3 mb-2">
+      <div className="h-14 w-[80%] mx-auto flex items-center justify-between px-2 py-2 mb-2">
         <img className="h-full py-2" src="./images/download.svg" alt="icon" />
         <div className="flex items-center gap-6">
           <button>
