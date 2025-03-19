@@ -8,11 +8,11 @@ export function HeaderForDesktopItem({ title, icon, children, isRed }) {
         </span>
       </button>
 
-      <div className="peer hidden peer-hover:block hover:block absolute inset-x-0 z-10 pt-[15px] peer-has(+ peer:hover:text-red-600)">
+      <div className="peer hidden peer-hover:block hover:block absolute inset-x-0 z-20 pt-[17px] peer-has(+ peer:hover:text-red-600)">
         <div className="bg-white">{children}</div>
       </div>
 
-      <div className="hidden peer-hover:block absolute inset-x-0 mt-[15px] h-screen bg-black/30 backdrop:blur-sm"></div>
+      <div className="hidden peer-hover:block absolute inset-x-0 mt-[17px] h-screen bg-black/30 backdrop:blur-sm"></div>
     </li>
   );
 }

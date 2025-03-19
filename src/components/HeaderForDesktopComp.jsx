@@ -1,6 +1,7 @@
 import React from "react";
 import { HeaderForDesktopItem } from "./HeaderForDesktopItem";
 import { MardanehList } from "./MardanehList";
+import { SearchBar } from "./searchBar";
 
 function HeaderDesktop({ className }) {
   return (
@@ -235,15 +236,7 @@ function HeaderDesktop({ className }) {
             </div>
           </HeaderForDesktopItem>
         </ul>
-
-        <div className="bg-gray-100 rounded p-1 flex flex-row w-3/12 focus-within:bg-white focus-within:border focus-within:w-4/12 max-h-[36px] transition-all duration-300 ease-in-out">
-          <input
-            type="text"
-            className="w-full text-sm focus:outline-none bg-transparent px-2"
-            placeholder="جستجو بین محصولات"
-          />
-          <i className="fa-solid fa-search text-gray-500 text-lg px-2"></i>
-        </div>
+        <SearchBar/>
       </div>
     </div>
   );
