@@ -12,7 +12,7 @@ export function HeaderForDesktopItem({ title, icon, children, isRed }) {
         <div className="bg-white">{children}</div>
       </div>
 
-      <div className="hidden peer-hover:block absolute inset-x-0 mt-[17px] h-screen bg-black/30 backdrop:blur-sm"></div>
+      <div className="hidden peer-hover:block absolute inset-x-0 mt-[17px] h-screen bg-black/30 backdrop:blur-sm z-10"></div>
     </li>
   );
 }
