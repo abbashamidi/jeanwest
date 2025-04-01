@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 body {
-  font-family: "Vazir", sans-serif;
+  font-family: "Yekan", sans-serif;
+  font-size: 12px !important;
 }
