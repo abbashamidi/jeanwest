@@ -9,51 +9,56 @@ const images = [
 
 export default function ImageCarouselHandle() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
     }, 3000);
-
     return () => clearInterval(interval);
   }, [currentIndex]);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    setFade(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+      setFade(false);
+    }, 300); // مدت زمان فید
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    setFade(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+      setFade(false);
+    }, 300);
   };
 
   return (
-    <div className="w-full mt-5 mb-10">
-      <div className="w-[80%] mx-auto relative">
-        {/* تصویر به عنوان دکمه */}
+    <div className="w-full md:mt-5 md:mb-10">
+      <div className="md:w-[80%] w-full mx-auto relative">
         <button onClick={nextSlide} className="w-full">
-          <img
-            src={images[currentIndex]}
-            alt="Carousel"
-            className="w-full h-[70vh] object-cover rounded-lg transition-all duration-500"
-          />
+          <div className="relative w-full h-[70vh]">
+            <img
+              src={images[currentIndex]}
+              alt="Carousel"
+              className={`w-full h-full object-cover rounded-lg transition-opacity duration-1000 ${
+                fade ? "opacity-0" : "opacity-100"
+              }`}
+            />
+          </div>
         </button>
 
-        {/* دکمه‌های ناوبری کنار هم و پایین سمت راست */}
-        <div className="absolute bottom-4 right-4 flex gap-0.5">
-          <button
-            onClick={prevSlide}
-            className="aspect-square px-2 bg-white"
-          >
+        {/* دکمه‌های ناوبری */}
+        <div className="absolute bottom-4 right-4 flex gap-1 hidden md:block">
+          <button onClick={prevSlide} className="aspect-square px-2 bg-white">
             ❮
           </button>
-          <button
-            onClick={nextSlide}
-            className="aspect-square px-2 bg-white"
-          >
+          <button onClick={nextSlide} className="aspect-square px-2 bg-white">
             ❯
           </button>
         </div>
