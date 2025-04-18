@@ -42,11 +42,11 @@ export default function ImageCarouselHandle({ className }) {
     <div className={`w-full md:mt-5 md:mb-10 ${className}`}>
       <div className="md:w-[80%] w-full mx-auto relative">
         <button onClick={nextSlide} className="w-full">
-          <div className="relative w-full h-[70vh]">
+          <div className="relative w-full h-[40vh] md:h-[70vh]">
             <img
               src={images[currentIndex]}
               alt="Carousel"
-              className={`w-full h-full object-cover rounded-lg transition-opacity duration-1000 ${
+              className={`w-full h-full object-cover md:rounded-lg transition-opacity duration-1000 ${
                 fade ? "opacity-0" : "opacity-100"
               }`}
             />

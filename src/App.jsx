@@ -12,7 +12,7 @@ function App() {
         <HeaderDesktop className="hidden md:block" />
         <ImageCaroselHandle />
       </div>
-      <ShppingCard />
+      <ShppingCard className="hidden md:block"/>
     </>
   );
 }

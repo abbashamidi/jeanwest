@@ -18,7 +18,7 @@ export function HeaderForMobileComp({ className }) {
   }, [showSearch]);
 
   return (
-    <div className={`w-full h-14 relative min-h-[100vh] ${className}`}>
+    <div className={`w-full h-14 relative ${className}`}>
       <div className="flex items-center justify-between h-14 p-4 border-b border-x-gray-200">
         <button>
           <svg
