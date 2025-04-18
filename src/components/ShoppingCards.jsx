@@ -1,8 +1,8 @@
 import ShppingCardItem from "./ShoppingCardItem";
 
-export default function ShppingCard() {
+export default function ShppingCard({ className }) {
   return (
-    <div className="w-full">
+    <div className={`w-full ${className}`}>
       <div className="w-[81.5%] mx-auto">
         <div className="flex items-center gap-1.5 pb-6">
           <svg

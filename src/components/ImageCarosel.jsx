@@ -7,7 +7,7 @@ const images = [
   "/images/Carousel/image4.jpg",
 ];
 
-export default function ImageCarouselHandle() {
+export default function ImageCarouselHandle({ className }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(false);
 
@@ -39,7 +39,7 @@ export default function ImageCarouselHandle() {
   };
 
   return (
-    <div className="w-full md:mt-5 md:mb-10">
+    <div className={`w-full md:mt-5 md:mb-10 ${className}`}>
       <div className="md:w-[80%] w-full mx-auto relative">
         <button onClick={nextSlide} className="w-full">
           <div className="relative w-full h-[70vh]">
