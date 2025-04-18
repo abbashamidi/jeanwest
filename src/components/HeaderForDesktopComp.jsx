@@ -3,7 +3,7 @@ import { HeaderForDesktopItem } from "./HeaderForDesktopItem";
 import { MardanehList } from "./MardanehList";
 import { SearchBar } from "./searchBar";
 
-export default function HeaderDesktop() {
+export default function HeaderDesktop({ className}) {
   const [hideList, setHideList] = useState(false); // این رو در خارج از useEffect نگه دارید
   const prevScrollY = useRef(0);
   const lastScrollDirection = useRef("down");
@@ -40,7 +40,7 @@ export default function HeaderDesktop() {
   }, []); // این اثر فقط یکبار در mount شدن اجرا میشه
 
   return (
-    <div className={"sticky top-0 z-10 bg-white w-full border-b"}>
+    <div className={`sticky top-0 z-10 bg-white w-full border-b ${className}`}>
       <div className="h-14 w-[80%] mx-auto flex items-center justify-between px-2 py-2 mb-2">
         <img className="h-full py-2" src="./images/download.svg" alt="icon" />
         <div className="flex items-center gap-6">

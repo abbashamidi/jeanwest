@@ -108,8 +108,8 @@ export function HeaderForMobileComp({ className }) {
             </div>
             <div className="w-full">
               <ul className="flex flex-row gap-2 flex-wrap">
-                {items.map((item) => (
-                  <li className="py-1.5 px-4 border rounded-lg">
+                {items.map((item, index) => (
+                  <li key={index} className="py-1.5 px-4 border rounded-lg">
                     <a href="#" className="flex items-center gap-2.5">
                       {item}
                       <i className="fa-solid fa-arrow-left"></i>
