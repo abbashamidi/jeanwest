@@ -5,6 +5,8 @@ import ShppingCard from "./components/ShoppingCards";
 import ProductsCategories from "./components/ProductsCategories";
 import Banner from "./components/banner";
 import Suggestion from "./Suggestion";
+import Details from "./components/Details";
+import Banner2 from "./components/Banner2";
 
 function App() {
   console.log("App component rendered");
@@ -17,6 +19,8 @@ function App() {
       <ProductsCategories/>
       <Banner src={"images/Banner/Banner.jpg"}/>
       <Suggestion/>
+      <Details/>
+      <Banner2 src={"images/Banner2/image1.jpg"}/>
     </>
   );
 }
