@@ -4,6 +4,7 @@ import ImageCaroselHandle from "./components/ImageCarosel";
 import ShppingCard from "./components/ShoppingCards";
 import ProductsCategories from "./components/ProductsCategories";
 import Banner from "./components/banner";
+import Suggestion from "./Suggestion";
 
 function App() {
   console.log("App component rendered");
@@ -15,6 +16,7 @@ function App() {
       <ShppingCard className="hidden md:block" />
       <ProductsCategories/>
       <Banner src={"images/Banner/Banner.jpg"}/>
+      <Suggestion/>
     </>
   );
 }

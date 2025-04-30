@@ -30,13 +30,14 @@ export default function ShppingCard({ className }) {
           slidesPerGroup={2}
           className="mySwiper"
         >
-          {/* Your Products */}
           <SwiperSlide>
             <ShppingCardItem
               src={"/images/ShppingCardItem/image10.jpg"}
               spancontent={"هودی زنانه جوتی جینز کد ۳۳۷۷۱۲۶۱"}
               spancontent1={"۷۴۹,۵۰۰ تومان"}
-              spancontent2={"۵۰ درصد تخفیف تمامی کالاها "}
+              spancontent2={"تخفیف فقط با افزودن به سبد خرید"}
+              percentage={"۴۷٪"}
+              previousPrice={"۱,۳۸۰,۳۲۰"}
             />
           </SwiperSlide>
 
@@ -45,7 +46,9 @@ export default function ShppingCard({ className }) {
               src={"/images/ShppingCardItem/image2.jpg"}
               spancontent={"کاپشن زنانه جین وست کد ۱۴۲۲۳۵۰۱"}
               spancontent1={"۴,۴۹۹,۵۰۰ تومان"}
-              spancontent2={"۵۰ درصد تخفیف تمامی کالاها "}
+              spancontent2={"تخفیف فقط با افزودن به سبد خرید"}
+              percentage={"۶۰٪"}
+              previousPrice={"۹,۸۷۰,۳۰۰"}
             />
           </SwiperSlide>
 
@@ -54,7 +57,9 @@ export default function ShppingCard({ className }) {
               src={"/images/ShppingCardItem/image9.jpg"}
               spancontent={"پلیور مردانه جین وست کد ۱۴۱۹۶۵۱۹"}
               spancontent1={"۱,۶۴۹,۵۰۰ تومان"}
-              spancontent2={"۵۰ درصد تخفیف تمامی کالاها "}
+              spancontent2={"تخفیف فقط با افزودن به سبد خرید"}
+              percentage={"۲۰٪"}
+              previousPrice={"۱,۸۳۰,۹۰۰"}
             />
           </SwiperSlide>
 
@@ -63,7 +68,9 @@ export default function ShppingCard({ className }) {
               src={"/images/ShppingCardItem/image8.jpg"}
               spancontent={"دورس زنانه جین وست  کد ۱۴۲۷۱۰۰۰۱"}
               spancontent1={"۷۴۹,۵۰۰ تومان"}
-              spancontent2={"۵۰ درصد تخفیف تمامی کالاها "}
+              spancontent2={"بیش از ۲۰ درصد تخفیف با اعمال کد تخفیف"}
+              percentage={"۱۵٪"}
+              previousPrice={"۹۶۰,۱۰۰"}
             />
           </SwiperSlide>
 
@@ -73,6 +80,8 @@ export default function ShppingCard({ className }) {
               spancontent={"کاپشن مردانه جوتی جونز کد ۲۷۳۴۵۶۱۲"}
               spancontent1={"۸۹۰,۹۰۰ تومان"}
               spancontent2={"۵۰ درصد تخفیف تمامی کالاها "}
+              percentage={"۴۷٪"}
+              previousPrice={"۱,۶۵۰,۱۲۰"}
             />
           </SwiperSlide>
 
@@ -81,7 +90,9 @@ export default function ShppingCard({ className }) {
               src={"/images/ShppingCardItem/image7.jpg"}
               spancontent={"ژاکت مردانه ومبلی کد ۲۴۳۳۵۵۶۷"}
               spancontent1={"۵۳۴,۷۰۰ تومان"}
-              spancontent2={"۵۰ درصد تخفیف تمامی کالاها "}
+              spancontent2={"اعمال تخفیف و فروش ویژه"}
+              percentage={"۴۷٪"}
+              previousPrice={"۱,۳۱۵,۵۰۰"}
             />
           </SwiperSlide>
 
@@ -90,7 +101,9 @@ export default function ShppingCard({ className }) {
               src={"/images/ShppingCardItem/image6.jpg"}
               spancontent={"شلوار پارچه ایی جین وست کد ۱۲۳۴۵۶۷۸"}
               spancontent1={"۷۵۰,۰۰۰ تومان"}
-              spancontent2={"۵۰ درصد تخفیف تمامی کالاها "}
+              spancontent2={"۵۰ بیش از ۲۰ درصد تخفیف با اعمال کد تخفیف"}
+              percentage={"۳۰٪"}
+              previousPrice={"۱,۰۴۰,۰۰۰"}
             />
           </SwiperSlide>
 
@@ -99,7 +112,9 @@ export default function ShppingCard({ className }) {
               src={"/images/ShppingCardItem/image3.jpg"}
               spancontent={"هودی اسپورت مک لارن کد ۹۸۷۵۶۴۳۱"}
               spancontent1={"۴۰۰,۰۰ تومان"}
-              spancontent2={"۵۰ درصد تخفیف تمامی کالاها "}
+              spancontent2={"۵۰ بیش از ۲۰ درصد تخفیف با اعمال کد تخفیف"}
+              percentage={"۴۷٪"}
+              previousPrice={"۸۱۹,۰۰۰"}
             />
           </SwiperSlide>
 
@@ -108,7 +123,9 @@ export default function ShppingCard({ className }) {
               src={"/images/ShppingCardItem/image5.jpg"}
               spancontent={"نیم بوت زمستانه آر کی کد ۳۲۱۴۵۶۷۸"}
               spancontent1={"۷۴۹,۵۰۰ تومان"}
-              spancontent2={"۵۰ درصد تخفیف تمامی کالاها "}
+              spancontent2={"اعمال تخفیف و فروش ویژه"}
+              percentage={"۴۰٪"}
+              previousPrice={"۱,۴۳۰,۰۰۰"}
             />
           </SwiperSlide>
 
@@ -117,7 +134,9 @@ export default function ShppingCard({ className }) {
               src={"/images/ShppingCardItem/image4.jpg"}
               spancontent={"پیراهن نخی جین وست کد ۲۹۸۴۷۶۱۰"}
               spancontent1={"۳۵۰,۷۵۰ تومان"}
-              spancontent2={"۵۰ درصد تخفیف تمامی کالاها "}
+              spancontent2={"بیش از ۲۰ درصد تخفیف با اعمال کد تخفیف"}
+              percentage={"۴۰٪"}
+              previousPrice={"۸۹۰,۹۱۰"}
             />
           </SwiperSlide>
         </Swiper>

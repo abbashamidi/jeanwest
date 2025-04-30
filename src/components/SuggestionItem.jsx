@@ -1,12 +1,11 @@
 import IconTag from "./Icons/IconTag";
-
-export default function ShoppingCardItem({
+export default function SuggestionItem({
   src,
   spancontent,
   spancontent1,
   spancontent2,
   percentage,
-    previousPrice
+  previousPrice,
 }) {
   return (
     <div className="w-full rounded flex flex-col group">
