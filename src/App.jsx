@@ -7,6 +7,7 @@ import Banner from "./components/banner";
 import Suggestion from "./Suggestion";
 import Details from "./components/Details";
 import Banner2 from "./components/Banner2";
+import Footer from "./components/footer";
 
 function App() {
   console.log("App component rendered");
@@ -21,6 +22,7 @@ function App() {
       <Suggestion/>
       <Details/>
       <Banner2 src={"images/Banner2/image1.jpg"}/>
+      <Footer/>
     </>
   );
 }
