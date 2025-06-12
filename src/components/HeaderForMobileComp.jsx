@@ -18,8 +18,8 @@ export function HeaderForMobileComp({ className }) {
   }, [showSearch]);
 
   return (
-    <div className={`w-full h-14 relative ${className}`}>
-      <div className="flex items-center justify-between h-14 p-4 border-b border-x-gray-200">
+    <div className={`w-full h-14 ${className} sticky top-0 z-50`}>
+      <div className="flex items-center justify-between h-14 p-4 border-b border-x-gray-200 bg-white">
         <button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,6 @@ export function HeaderForMobileComp({ className }) {
           </svg>
         </button>
 
-        {/* لایه جستجو با ترنزیشن */}
         <div
           className={`fixed inset-0 z-10 bg-white
             transition-all duration-300 ease-in-out text-xs

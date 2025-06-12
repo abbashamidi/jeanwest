@@ -6,3 +6,30 @@ body {
   font-family: "Yekan", sans-serif;
   font-size: 12px !important;
 }
+
+.swiper-button-prev, .swiper-button-next {
+  color: black; /* or any color that fits your theme */
+  top: 40%;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-prev, .swiper-button-next {
+    scale: 0.7;
+    top: 45%;
+  }
+}
+
+/* Move buttons outside of Swiper box */
+.my-swiper .swiper-button-next,
+.my-swiper .swiper-button-prev {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.my-swiper .swiper-button-prev {
+  left: -40px !important; /* Move left outside */
+}
+
+.my-swiper .swiper-button-next {
+  right: -40px !important; /* Move right outside */
+}

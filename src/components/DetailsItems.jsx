@@ -1,12 +1,11 @@
-export default function DetailsItems({src,span1,span2}) {
-    return (
-        <div className="flex items-center justify-center border-2 w-1/4 rounded-lg px-3 py-4 gap-3 h-3/4">
-            <img src={src} alt="Random-image" className="h-12 w-12"/>
-            <div className="flex flex-col items-start gap-1">
-                <span className="block font-bold">{span1}</span>
-                <span className="block text-gray-500">{span2}</span>
-
-            </div>
-        </div>
-    )
+export default function DetailsItems({ src, span1, span2 }) {
+  return (
+    <div className="flex flex-col md:flex-row items-start md:items-center gap-2 border p-3 rounded-lg mb-2 text-xs">
+      <img src={src} alt={span1} className="h-9 w-9 min-w-[36px] md:ml-2"/>
+      <div className="text-right">
+        <p className="font-semibold text-black mb-1">{span1}</p>
+        <p className="text-gray-500 leading-snug text-[11px]">{span2}</p>
+      </div>
+    </div>
+  );
 }

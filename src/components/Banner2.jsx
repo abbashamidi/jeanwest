@@ -1,10 +1,16 @@
 export default function Banner2({ src }) {
   return (
-    <>
-      <div className="w-[81.5%] mx-auto h-56 mb-32 rounded mt-10 border-b-4 border-gray-300">
-        <img src={src} alt="banner-photo" className="rounded" />
+    <div className="w-[90%] sm:w-[85%] md:w-[81.5%] mx-auto rounded overflow-hidden">
+      <div
+        className="w-full mx-auto mb-14 rounded overflow-hidden relative"
+        style={{ height: "clamp(200px, 40vh, 420px)" }}
+      >
+        <img
+          src={src}
+          alt="banner-photo"
+          className="w-full h-full object-cover absolute inset-0"
+        />
       </div>
-      <hr className="w-[81.5%] border-1 border-gray-300 mx-auto" />
-    </>
+    </div>
   );
 }

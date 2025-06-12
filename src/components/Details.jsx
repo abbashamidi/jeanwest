@@ -1,7 +1,12 @@
 import DetailsItems from "./DetailsItems";
-export default function Details() {
+
+export default function Details({ className }) {
   return (
-    <div className="w-[81.5%] mx-auto flex gap-2 items-center justify-center h-40">
+    <div
+      className={`flex flex-col md:flex-row md:justify-center gap-4 ${
+        className || ""
+      }`}
+    >
       <DetailsItems
         src={"images/DetailsImages/img1.png"}
         span1={"تعویض آنلاین"}
@@ -13,7 +18,7 @@ export default function Details() {
         src={"images/DetailsImages/img2.png"}
         span1={"ارسال ۲ ساعته"}
         span2={
-          "امکان ارسال تمامی سفارش ها با بسته بندی مناسببه هر نقطه از ایران وجود دارد."
+          "امکان ارسال تمامی سفارش ها با بسته بندی مناسب به هر نقطه از ایران وجود دارد."
         }
       />
       <DetailsItems

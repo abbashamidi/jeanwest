@@ -1,7 +1,16 @@
-export default function Banner({src}) {
-    return (
-        <div className="w-[81.5%] mx-auto h-56 mb-56 rounded">
-            <img src={src} alt="banner-photo" className="rounded"/>
-        </div>
-    )
+export default function Banner({ src }) {
+  return (
+    <div className="w-[90%] sm:w-[85%] md:w-[81.5%] mx-auto rounded overflow-hidden">
+      <div
+        className="w-full mx-auto mb-14 rounded overflow-hidden relative"
+        style={{ height: "clamp(200px, 40vh, 420px)" }} // حداقل، وابسته به ویوپورت، و حداکثر
+      >
+        <img
+          src={src}
+          alt="banner-photo"
+          className="w-full h-full object-cover absolute inset-0"
+        />
+      </div>
+    </div>
+  );
 }
