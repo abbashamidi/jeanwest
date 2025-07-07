@@ -2,15 +2,62 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import useIsSmallScreen from "./Hooks/useIsSmallScreen";
+import { useRef } from "react";
 
+import useIsSmallScreen from "./Hooks/useIsSmallScreen";
 import SuggestionItem from "./components/SuggestionItem";
 
 export default function Suggestion() {
   const isSmall = useIsSmallScreen();
+
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
-    <div>
-      <div className="w-[81.5%] mx-auto mb-14">
+    <div className="mt-6 relative">
+      <div className="flex justify-end gap-2 mb-4">
+        <button
+          ref={prevRef}
+          className="swiper-button-prev-custom absolute right-16 top-1/2 -translate-y-1/2 p-2 rounded-full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            className="w-5 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+
+        <button
+          ref={nextRef}
+          className="swiper-button-next-custom absolute left-16 top-1/2 -translate-y-1/2 p-2 rounded-full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            className="w-5 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div className="w-[81.5%] mx-auto mb-14 z-20">
         <div className="flex items-center gap-1.5 pb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +74,13 @@ export default function Suggestion() {
 
         <Swiper
           modules={[Navigation]}
-          navigation={true}
+          onBeforeInit={(swiper) => {
+            if (typeof swiper.params.navigation !== "boolean") {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+            }
+          }}
+          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
           spaceBetween={20}
           slidesPerGroup={2}
           breakpoints={{
@@ -38,181 +91,122 @@ export default function Suggestion() {
             1280: { slidesPerView: 5 },
           }}
         >
-          <SwiperSlide>
-            <SuggestionItem
-              src={"/images/SuggestionItems/image1.jpg"}
-              spancontent={
-                isSmall
-                  ? "پیراهن مردانه جینز"
-                  : "پیراهن مردانه جینز کد ۳۴۵۶۸۱۹۰"
-              }
-              spancontent1={"۱,۳۲۴,۷۵۰ تومان"}
-              spancontent2={
-                isSmall
-                  ? "تخفیف با کد تخفیف"
-                  : "بیش از ۲۰ درصد تخفیف با اعمال کد تخفیف"
-              }
-              percentage={"۴۷٪"}
-              previousPrice={"۲,۲۵۰,۹۰۰"}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <SuggestionItem
-              src={"/images/SuggestionItems/image2.jpg"}
-              spancontent={
-                isSmall ? "پرفیوم جوتی جونز" : "پرفیوم جوتی جونز کد ۱۴۱۴۲۵۶۷"
-              }
-              spancontent1={"۴۹۹,۵۰۰ تومان"}
-              spancontent2={"اعمال تخفیف و فروش ویژه"}
-              percentage={"۵۸٪"}
-              previousPrice={"۱,۱۱۰,۹۵۰"}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <SuggestionItem
-              src={"/images/SuggestionItems/image3.jpg"}
-              spancontent={
-                isSmall
-                  ? "شومیز آستین بلند جین وست"
-                  : "شومیز آستین بلند زنانه جین وست کد ۷۷۹۱۹۰۱۲"
-              }
-              spancontent1={"۱,۸۵۴,۰۰۰ تومان"}
-              spancontent2={"اعمال تخفیف و فروش ویژه"}
-              percentage={"۴۷٪"}
-              previousPrice={"۳,۱۰۰,۰۰۰"}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <SuggestionItem
-              src={"/images/SuggestionItems/image4.jpg"}
-              spancontent={
-                isSmall
-                  ? "شلوار اسلش مردانه"
-                  : "شلوار اسلش مردانه جین وست کد ۲۰۲۰۳۴۵۱"
-              }
-              spancontent1={"۱,۵۸۹,۰۰۰ تومان"}
-              spancontent2={"اعمال تخفیف و فروش ویژه"}
-              percentage={"۲۰٪"}
-              previousPrice={"۱,۸۹۰,۰۰۰"}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <SuggestionItem
-              src={"/images/SuggestionItems/image5.jpg"}
-              spancontent={
-                isSmall
-                  ? "ست آستین بلند زنانه"
-                  : "ست آستین بلند و جلیقه زنانه کد ..."
-              }
-              spancontent1={"۴۹۹,۵۰۰ تومان"}
-              spancontent2={
-                isSmall
-                  ? "تخفیف با کد تخفیف"
-                  : "بیش از ۲۰ درصد تخفیف با اعمال کد تخفیف"
-              }
-              percentage={"‍۱۰٪"}
-              previousPrice={"۶۰۰,۰۰"}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <SuggestionItem
-              src={"/images/SuggestionItems/image6.jpg"}
-              spancontent={
-                isSmall
-                  ? "نیم بوت زنانه جوتی جونز"
-                  : "نیم بوت زنانه جوتی جونز کد ۹۰۹۰۲۱۳۴"
-              }
-              spancontent1={"۳,۳۷۹,۵۰۰ تومان"}
-              spancontent2={
-                isSmall
-                  ? "تخفیف در سبد خرید"
-                  : "تخفیف فقط با افزودن به سبد خرید"
-              }
-              percentage={"۱۰٪"}
-              previousPrice={"۳,۴۵۰,۹۰۰"}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <SuggestionItem
-              src={"/images/SuggestionItems/image7.jpg"}
-              spancontent={
-                isSmall
-                  ? "اد پرفیوم مردانه جوتی"
-                  : "اد پرفیوم مردانه جوتی جونز کد ۷۶۵۹۱۲۵۶"
-              }
-              spancontent1={"۱,۵۹۹,۵۰۰ تومان"}
-              spancontent2={
-                isSmall
-                  ? "تخفیف در سبد خرید"
-                  : "تخفیف فقط با افزودن به سبد خرید"
-              }
-              percentage={"۴۷٪"}
-              previousPrice={"۲,۲۵۰,۰۰۰"}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <SuggestionItem
-              src={"/images/SuggestionItems/image8.jpg"}
-              spancontent={
-                isSmall
-                  ? "دامن زنانه جوتی جونز"
-                  : "دامن زنانه جوتی جونز کد sw۱۲۳۹۲۰"
-              }
-              spancontent1={"۵۰۹,۶۶۰ تومان"}
-              spancontent2={
-                isSmall
-                  ? "تخفیف در سبد خرید"
-                  : "تخفیف فقط با افزودن به سبد خرید"
-              }
-              percentage={"۱۲٪"}
-              previousPrice={"۸۲۳,۰۰۰"}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <SuggestionItem
-              src={"/images/SuggestionItems/image9.jpg"}
-              spancontent={
-                isSmall
-                  ? "پیراهن مردانه جوتی جونز"
-                  : "پیراهن مردانه جوتی جونز Jootie Jones کد ..."
-              }
-              spancontent1={"۱,۸۵۴,۴۷۰ تومان"}
-              spancontent2={
-                isSmall
-                  ? "تخفیف در سبد خرید"
-                  : "تخفیف فقط با افزودن به سبد خرید"
-              }
-              percentage={"۴۷٪"}
-              previousPrice={"۳,۰۰۰,۹۵۰"}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <SuggestionItem
-              src={"/images/SuggestionItems/image10.jpg"}
-              spancontent={
-                isSmall
-                  ? "کاپشن مردانه بالنو"
-                  : "کاپشن مردانه بالنو Baleno کد ..."
-              }
-              spancontent1={"۴,۵۰۴,۷۷۰ تومان"}
-              spancontent2={
-                isSmall
-                  ? "تخفیف در سبد خرید"
-                  : "تخفیف فقط با افزودن به سبد خرید"
-              }
-              percentage={"۴۷٪"}
-              previousPrice={"۷,۱۲۱,۶۰۰"}
-            />
-          </SwiperSlide>
+          {/** اینجا همه‌ی SwiperSlideها بدون تغییر قابل استفاده هستند */}
+          {[
+            {
+              src: "/images/SuggestionItems/image1.jpg",
+              spancontentSmall: "پیراهن مردانه جینز",
+              spancontentLarge: "پیراهن مردانه جینز کد ۳۴۵۶۸۱۹۰",
+              price: "۱,۳۲۴,۷۵۰ تومان",
+              detailSmall: "تخفیف با کد تخفیف",
+              detailLarge: "بیش از ۲۰ درصد تخفیف با اعمال کد تخفیف",
+              percentage: "۴۷٪",
+              prevPrice: "۲,۲۵۰,۹۰۰",
+            },
+            {
+              src: "/images/SuggestionItems/image2.jpg",
+              spancontentSmall: "پرفیوم جوتی جونز",
+              spancontentLarge: "پرفیوم جوتی جونز کد ۱۴۱۴۲۵۶۷",
+              price: "۴۹۹,۵۰۰ تومان",
+              detailSmall: "اعمال تخفیف و فروش ویژه",
+              detailLarge: "اعمال تخفیف و فروش ویژه",
+              percentage: "۵۸٪",
+              prevPrice: "۱,۱۱۰,۹۵۰",
+            },
+            {
+              src: "/images/SuggestionItems/image3.jpg",
+              spancontentSmall: "شومیز آستین بلند جین وست",
+              spancontentLarge: "شومیز آستین بلند زنانه جین وست کد ۷۷۹۱۹۰۱۲",
+              price: "۱,۸۵۴,۰۰۰ تومان",
+              detailSmall: "اعمال تخفیف و فروش ویژه",
+              detailLarge: "اعمال تخفیف و فروش ویژه",
+              percentage: "۴۷٪",
+              prevPrice: "۳,۱۰۰,۰۰۰",
+            },
+            {
+              src: "/images/SuggestionItems/image4.jpg",
+              spancontentSmall: "شلوار اسلش مردانه",
+              spancontentLarge: "شلوار اسلش مردانه جین وست کد ۲۰۲۰۳۴۵۱",
+              price: "۱,۵۸۹,۰۰۰ تومان",
+              detailSmall: "اعمال تخفیف و فروش ویژه",
+              detailLarge: "اعمال تخفیف و فروش ویژه",
+              percentage: "۲۰٪",
+              prevPrice: "۱,۸۹۰,۰۰۰",
+            },
+            {
+              src: "/images/SuggestionItems/image5.jpg",
+              spancontentSmall: "ست آستین بلند زنانه",
+              spancontentLarge: "ست آستین بلند و جلیقه زنانه کد ...",
+              price: "۴۹۹,۵۰۰ تومان",
+              detailSmall: "تخفیف با کد تخفیف",
+              detailLarge: "بیش از ۲۰ درصد تخفیف با اعمال کد تخفیف",
+              percentage: "‍۱۰٪",
+              prevPrice: "۶۰۰,۰۰",
+            },
+            {
+              src: "/images/SuggestionItems/image6.jpg",
+              spancontentSmall: "نیم بوت زنانه جوتی جونز",
+              spancontentLarge: "نیم بوت زنانه جوتی جونز کد ۹۰۹۰۲۱۳۴",
+              price: "۳,۳۷۹,۵۰۰ تومان",
+              detailSmall: "تخفیف در سبد خرید",
+              detailLarge: "تخفیف فقط با افزودن به سبد خرید",
+              percentage: "۱۰٪",
+              prevPrice: "۳,۴۵۰,۹۰۰",
+            },
+            {
+              src: "/images/SuggestionItems/image7.jpg",
+              spancontentSmall: "اد پرفیوم مردانه جوتی",
+              spancontentLarge: "اد پرفیوم مردانه جوتی جونز کد ۷۶۵۹۱۲۵۶",
+              price: "۱,۵۹۹,۵۰۰ تومان",
+              detailSmall: "تخفیف در سبد خرید",
+              detailLarge: "تخفیف فقط با افزودن به سبد خرید",
+              percentage: "۴۷٪",
+              prevPrice: "۲,۲۵۰,۰۰۰",
+            },
+            {
+              src: "/images/SuggestionItems/image8.jpg",
+              spancontentSmall: "دامن زنانه جوتی جونز",
+              spancontentLarge: "دامن زنانه جوتی جونز کد sw۱۲۳۹۲۰",
+              price: "۵۰۹,۶۶۰ تومان",
+              detailSmall: "تخفیف در سبد خرید",
+              detailLarge: "تخفیف فقط با افزودن به سبد خرید",
+              percentage: "۱۲٪",
+              prevPrice: "۸۲۳,۰۰۰",
+            },
+            {
+              src: "/images/SuggestionItems/image9.jpg",
+              spancontentSmall: "پیراهن مردانه جوتی جونز",
+              spancontentLarge: "پیراهن مردانه جوتی جونز Jootie Jones کد ...",
+              price: "۱,۸۵۴,۴۷۰ تومان",
+              detailSmall: "تخفیف در سبد خرید",
+              detailLarge: "تخفیف فقط با افزودن به سبد خرید",
+              percentage: "۴۷٪",
+              prevPrice: "۳,۰۰۰,۹۵۰",
+            },
+            {
+              src: "/images/SuggestionItems/image10.jpg",
+              spancontentSmall: "کاپشن مردانه بالنو",
+              spancontentLarge: "کاپشن مردانه بالنو Baleno کد ...",
+              price: "۴,۵۰۴,۷۷۰ تومان",
+              detailSmall: "تخفیف در سبد خرید",
+              detailLarge: "تخفیف فقط با افزودن به سبد خرید",
+              percentage: "۴۷٪",
+              prevPrice: "۷,۱۲۱,۶۰۰",
+            },
+          ].map((item, index) => (
+            <SwiperSlide key={index}>
+              <SuggestionItem
+                src={item.src}
+                spancontent={
+                  isSmall ? item.spancontentSmall : item.spancontentLarge
+                }
+                spancontent1={item.price}
+                spancontent2={isSmall ? item.detailSmall : item.detailLarge}
+                percentage={item.percentage}
+                previousPrice={item.prevPrice}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

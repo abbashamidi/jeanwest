@@ -3,7 +3,7 @@ import DetailsItems from "./DetailsItems";
 export default function Details({ className }) {
   return (
     <div
-      className={`flex flex-col md:flex-row md:justify-center gap-4 ${
+      className={`w-[81.5%] mx-auto flex flex-col md:flex-row md:justify-center gap-4 ${
         className || ""
       }`}
     >

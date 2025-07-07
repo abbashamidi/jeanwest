@@ -3,14 +3,61 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import useIsSmallScreen from "../Hooks/useIsSmallScreen";
-
 import ShppingCardItem from "./ShoppingCardItem";
+import { useRef } from "react";
 
 export default function ShoppingCard({ className }) {
   const isSmall = useIsSmallScreen();
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
-    <div className={`mt-6 ${className}`}>
-      <div className="w-[81.5%] mx-auto mb-14">
+    <div className={`mt-6 relative ${className}`}>
+      <div className="flex justify-end gap-2 mb-4">
+        <div>
+          <button
+            ref={prevRef}
+            className="swiper-button-prev-custom absolute right-16 top-1/2 -translate-y-1/2 p-2 rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          <button
+            ref={nextRef}
+            className="swiper-button-next-custom absolute left-16 top-1/2 -translate-y-1/2 p-2 rounded-full"
+          >
+            {/* فلش چپ وکتور */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div className="w-[81.5%] mx-auto mb-14 z-20">
         <div className="flex items-center gap-1.5 pb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +73,13 @@ export default function ShoppingCard({ className }) {
         </div>
         <Swiper
           modules={[Navigation]}
-          navigation={true}
+          onBeforeInit={(swiper) => {
+            if (typeof swiper.params.navigation !== "boolean") {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+            }
+          }}
+          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
           spaceBetween={20}
           slidesPerGroup={2}
           breakpoints={{
