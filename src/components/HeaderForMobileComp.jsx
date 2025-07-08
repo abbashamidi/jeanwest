@@ -1,125 +1,25 @@
 import { useState, useEffect } from "react";
+import { HeaderForMobile__TopButtons } from "./HeaderForMobile__TopButtons";
+import { HeaderForMobile__SearchOverlay } from "./HeaderForMobile__SearchOverlay";
 
 export function HeaderForMobileComp({ className }) {
   const items = ["شلوار جین", "پالتو", "جوراب", "کلاه", "دستکش"];
-
   const [showSearch, setShowSearch] = useState(false);
 
-  const handleClick = () => {
-    setShowSearch((prev) => !prev);
-  };
+  const handleClick = () => setShowSearch((prev) => !prev);
 
   useEffect(() => {
-    if (showSearch) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
+    document.body.classList.toggle("overflow-hidden", showSearch);
   }, [showSearch]);
 
   return (
     <div className={`w-full h-14 ${className} sticky top-0 z-50`}>
-      <div className="flex items-center justify-between h-14 p-4 border-b border-x-gray-200 bg-white">
-        <button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="w-6 h-6"
-          >
-            <g stroke="currentColor" strokeWidth={1.5}>
-              <path d="M18 8c0 4.5-6 9-6 9s-6-4.5-6-9a6 6 0 1 1 12 0Z"></path>
-              <path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM8.835 14H5a1 1 0 0 0-.9.7l-2 6c-.1.1-.1.2-.1.3 0 .6.4 1 1 1h18c.6 0 1-.4 1-1 0-.1 0-.2-.1-.3l-2-6a1 1 0 0 0-.9-.7h-3.835"></path>
-            </g>
-          </svg>
-        </button>
-        <img className="h-full" src="./images/download.svg" alt="icon" />
-        <button onClick={handleClick}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="w-6 h-6"
-          >
-            <g stroke="currentColor" strokeWidth={1.5}>
-              <path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM21 21l-4.3-4.3"></path>
-            </g>
-          </svg>
-        </button>
-
-        <div
-          className={`fixed inset-0 z-10 bg-white
-            transition-all duration-300 ease-in-out text-xs
-            ${
-              showSearch
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4 pointer-events-none"
-            }
-          `}
-        >
-          <div className="flex flex-col absolute w-full top-0 border-b pt-1.5 pb-3 gap-1.5 px-4">
-            <div className="flex w-80 py-2 gap-1 items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20"
-                className="w-6 h-6 stroke-1"
-                onClick={handleClick}
-              >
-                <g stroke="currentColor">
-                  <path d="M16.658 9.983H4.167M11.656 4.99 16.665 10l-5.01 5.01"></path>
-                </g>
-              </svg>
-              <span>جست و جو</span>
-            </div>
-            <div className="relative w-full">
-              <input
-                type="text"
-                className="bg-gray-200 focus:outline-none w-full rounded py-2.5 pl-10 pr-2 transition-colors duration-300 hover:bg-white border border-transparent hover:border-gray-200"
-                placeholder="جست و جو بین محصولات"
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2"
-              >
-                <g stroke="currentColor" strokeWidth={1.5}>
-                  <path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM21 21l-4.3-4.3"></path>
-                </g>
-              </svg>
-            </div>
-          </div>
-          <div className="flex flex-col absolute w-full top-24 pt-1.5 pb-3 gap-1.5 px-4">
-            <div className="flex w-80 py-4 gap-1 items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 16 16"
-                className="w-5 h-5 stroke-1"
-              >
-                <path
-                  stroke="currentColor"
-                  d="M5.667 9.667A1.667 1.667 0 0 0 7.333 8c0-.92-.333-1.333-.666-2C5.952 4.571 6.517 3.297 8 2c.333 1.667 1.333 3.267 2.667 4.333 1.333 1.067 2 2.334 2 3.667a4.667 4.667 0 0 1-9.334 0c0-.769.289-1.53.667-2a1.667 1.667 0 0 0 1.667 1.667Z"
-                ></path>
-              </svg>
-              <span>جستجوهای پرطرفدار</span>
-            </div>
-            <div className="w-full">
-              <ul className="flex flex-row gap-2 flex-wrap">
-                {items.map((item, index) => (
-                  <li key={index} className="py-1.5 px-4 border rounded-lg">
-                    <a href="#" className="flex items-center gap-2.5">
-                      {item}
-                      <i className="fa-solid fa-arrow-left"></i>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HeaderForMobile__TopButtons onSearchClick={handleClick} />
+      <HeaderForMobile__SearchOverlay
+        show={showSearch}
+        onClose={handleClick}
+        items={items}
+      />
     </div>
   );
 }
